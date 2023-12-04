@@ -45,7 +45,7 @@ export default function App () {
       .then(() => {
         localStorage.setItem('loggedIn', JSON.stringify(true))
         setLoggedIn(true)
-        navigate('/react-mesto-auth')
+        navigate('/')
       })
       .catch(() => {
         localStorage.setItem('loggedIn', JSON.stringify(false))
@@ -62,7 +62,7 @@ export default function App () {
           setLoggedIn(true)
           localStorage.setItem('jwt', res.token)
           localStorage.setItem('loggedIn', JSON.stringify(true))
-          navigate('/react-mesto-auth')
+          navigate('/')
         }
       })
       .catch(() => {
@@ -83,7 +83,7 @@ export default function App () {
       .register(email, password)
       .then(() => {
         setStatus({ message: 'Вы успешно зарегистрировались!', status: true })
-        navigate('/react-mesto-auth/sign-in')
+        navigate('/sign-in')
       })
       .catch(() => {
         setStatus({
@@ -240,19 +240,19 @@ export default function App () {
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
           <Route
-            path='/react-mesto-auth/sign-in'
+            path='/sign-in'
             element={<Login onLogin={handleLogin} isLoading={isLoading} />}
           />
 
           <Route
-            path='/react-mesto-auth/sign-up'
+            path='/sign-up'
             element={
               <Register onRegister={handleRegister} isLoading={isLoading} />
             }
           />
 
           <Route
-            path='/react-mesto-auth'
+            path='/'
             element={
               <ProtectedRoute loggedIn={loggedIn}>
                 <Main
@@ -274,9 +274,9 @@ export default function App () {
             path='*'
             element={
               loggedIn ? (
-                <Navigate to='/react-mesto-auth' />
+                <Navigate to='/' />
               ) : (
-                <Navigate to='/react-mesto-auth/sign-in' />
+                <Navigate to='/sign-in' />
               )
             }
           />

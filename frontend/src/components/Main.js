@@ -21,7 +21,7 @@ export default function Main ({
     <>
       <Header
         email={email}
-        address={'/react-mesto-auth/sign-in'}
+        address={'/sign-in'}
         text={'Выйти'}
         onClick={onSignOut}
       />

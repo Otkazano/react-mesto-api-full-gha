@@ -13,7 +13,7 @@ const limiter = rateLimit({
   limit: 100,
   standardHeaders: 'draft-7',
   legacyHeaders: false,
-})
+});
 
 app.use(helmet());
 app.use(cors());

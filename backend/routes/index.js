@@ -12,6 +12,11 @@ import { errorLogger, requestLogger } from '../middlewares/logger.js';
 const router = Router();
 
 router.use(requestLogger);
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 router.post('/signin', userAuthValidate, login);
 router.post('/signup', userAuthValidate, createUser);
 router.use('/users', auth, userRouter);
