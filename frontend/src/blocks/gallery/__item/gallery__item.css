@@ -1,0 +1,8 @@
+.gallery__item {
+  background: #FFFFFF;
+  border-radius: 10px;
+  color: black;
+  margin: 0;
+  right: 0;
+  position: relative;
+}

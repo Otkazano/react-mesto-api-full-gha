@@ -1,0 +1,15 @@
+.gallery__likes-icon {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/like.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+}
+
+.gallery__likes-icon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.gallery {
+  max-width: 880px;
+  margin: 0 auto 69px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-column-gap: 17px;
+  grid-row-gap: 20px;
+}
+
+@media (max-width: 930px) {
+  .gallery {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery { 
+    margin: 0 auto 51px;
+  }
+}

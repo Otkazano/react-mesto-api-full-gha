@@ -1,0 +1,19 @@
+.gallery__delete {
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/trash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+  position: absolute;
+  
+  top: 20px;
+  right: 20px;
+}
+
+.gallery__delete:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

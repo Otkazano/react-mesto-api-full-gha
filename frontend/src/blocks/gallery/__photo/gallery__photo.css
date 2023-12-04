@@ -1,0 +1,17 @@
+.gallery__photo {
+  width: 282px;
+  height: 282px;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #212121;
+}
+
+.gallery__photo:hover {
+  cursor: zoom-in;
+}

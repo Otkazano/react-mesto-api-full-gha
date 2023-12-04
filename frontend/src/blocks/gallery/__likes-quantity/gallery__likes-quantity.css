@@ -1,0 +1,10 @@
+.gallery__likes-quantity {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  min-height: 16px;
+}
