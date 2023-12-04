@@ -19,7 +19,7 @@
 
 Адрес репозитория: https://github.com/Otkazano/react-mesto-api-full-gha
 
-IP-адрес 158.160.128.12
+IP 158.160.128.12
 
 Frontend https://mesto.media.nomoredomainsmonster.ru/
 
