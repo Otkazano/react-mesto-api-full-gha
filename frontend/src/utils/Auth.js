@@ -51,7 +51,7 @@ class Auth {
 }
 
 const authApi = new Auth({
-  url: 'https://auth.nomoreparties.co',
+  url: 'https://api.mesto.media.nomoredomainsmonster.ru',
   headers: {
     'Content-Type': 'application/json'
   }

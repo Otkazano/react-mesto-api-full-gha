@@ -3,7 +3,6 @@ class Api {
     this._url = url
     this._userUrl = `${this._url}/users/me`
     this._cardsUrl = `${this._url}/cards`
-    this._likesUrl = `${this._url}/cards/likes`
     this._headers = headers
   }
 
@@ -13,6 +12,13 @@ class Api {
     }
 
     return Promise.reject(new Error(`${res.status}`))
+  }
+
+  setAuthorizationHeader (jwt) {
+    this._headers = {
+      ...this._headers,
+      authorization: `Bearer ${jwt}`
+    }
   }
 
   getAllCards () {
@@ -40,14 +46,14 @@ class Api {
   }
 
   likeCard (id) {
-    return fetch(`${this._likesUrl}/${id}`, {
+    return fetch(`${this._cardsUrl}/${id}/likes`, {
       headers: this._headers,
       method: 'PUT'
     }).then(this._getResponse)
   }
 
   dislikeCard (id) {
-    return fetch(`${this._likesUrl}/${id}`, {
+    return fetch(`${this._cardsUrl}/${id}/likes`, {
       headers: this._headers,
       method: 'DELETE'
     }).then(this._getResponse)
@@ -82,9 +88,8 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-74',
+  url: 'https://api.mesto.media.nomoredomainsmonster.ru',
   headers: {
-    authorization: '0413359d-1a9b-4aff-83cb-a2166bb3e79d',
     'Content-Type': 'application/json'
   }
 })

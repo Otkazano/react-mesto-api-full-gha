@@ -42,7 +42,9 @@ export default function Main ({
           </div>
           <div className='profile__info'>
             <div className='profile__person'>
-              <h1 className='profile__name'>{currentUser.name ? currentUser.name : 'Райан Гослинг'}</h1>
+              <h1 className='profile__name'>
+                {currentUser.name ? currentUser.name : 'Райан Гослинг'}
+              </h1>
               <button
                 type='button'
                 className='profile__btn-edit'
@@ -50,7 +52,9 @@ export default function Main ({
                 onClick={onEditProfile}
               ></button>
             </div>
-            <p className='profile__about'>{currentUser.about ? currentUser.about : 'Выгуливаю собак'}</p>
+            <p className='profile__about'>
+              {currentUser.about ? currentUser.about : 'Выгуливаю собак'}
+            </p>
           </div>
           <button
             type='button'

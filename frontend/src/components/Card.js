@@ -20,8 +20,8 @@ export default function Card ({
   }
 
   const currentUser = React.useContext(CurrentUserContext)
-  const isOwn = item.owner._id === currentUser._id
-  const isLiked = item.likes.some(i => i._id === currentUser._id)
+  const isOwn = item.owner === currentUser._id
+  const isLiked = item.likes.some(i => i === currentUser._id)
   const cardLikeButtonClassName = `gallery__likes-icon gallery__btn-like ${
     isLiked && 'gallery__likes-icon_active'
   }`

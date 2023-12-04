@@ -104,6 +104,7 @@ export default function App () {
 
   React.useEffect(() => {
     if (loggedIn) {
+      api.setAuthorizationHeader(localStorage.getItem('jwt'))
       Promise.all([api.getUserData(), api.getAllCards()])
         .then(([person, cards]) => {
           setCurrentUser(person)
@@ -116,7 +117,7 @@ export default function App () {
   }, [loggedIn])
 
   function handleCardLike (card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id)
+    const isLiked = card.likes.some(i => i === currentUser._id)
     if (isLiked) {
       api
         .dislikeCard(card._id)
@@ -273,11 +274,7 @@ export default function App () {
           <Route
             path='*'
             element={
-              loggedIn ? (
-                <Navigate to='/' />
-              ) : (
-                <Navigate to='/sign-in' />
-              )
+              loggedIn ? <Navigate to='/' /> : <Navigate to='/sign-in' />
             }
           />
         </Routes>
